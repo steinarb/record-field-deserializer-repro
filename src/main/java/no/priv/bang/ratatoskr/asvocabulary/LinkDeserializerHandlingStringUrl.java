@@ -17,6 +17,7 @@ public class LinkDeserializerHandlingStringUrl extends StdDeserializer<LinkOrObj
 
     @Override
     public LinkOrObject deserialize(JsonParser p, DeserializationContext ctxt) throws IOException, JacksonException {
+        p.skipChildren();
         return null;
     }
 
