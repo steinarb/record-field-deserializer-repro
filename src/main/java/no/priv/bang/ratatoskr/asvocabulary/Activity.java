@@ -15,6 +15,6 @@
  */
 package no.priv.bang.ratatoskr.asvocabulary;
 
-public sealed interface Activity extends IntransitiveActivity permits Accept, ActivityRecord, Add, Offer {
+public sealed interface Activity extends IntransitiveActivity permits Add {
     LinkOrObject object();
 }

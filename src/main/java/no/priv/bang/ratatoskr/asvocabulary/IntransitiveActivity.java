@@ -15,7 +15,7 @@
  */
 package no.priv.bang.ratatoskr.asvocabulary;
 
-public sealed interface IntransitiveActivity extends ActivityStreamObject permits Activity, Travel {
+public sealed interface IntransitiveActivity extends ActivityStreamObject permits Activity {
     LinkOrObject actor();
     LinkOrObject target();
     LinkOrObject origin();

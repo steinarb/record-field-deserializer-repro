@@ -21,23 +21,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, include=JsonTypeInfo.As.EXTERNAL_PROPERTY, property = "type" )
 @JsonSubTypes({
-    @Type(value = ActivityStreamObjectRecord.class, name = ActivityStreamObjectType.Names.OBJECT),
-    @Type(value = ActivityRecord.class, name = ActivityStreamObjectType.Names.ACTIVITY),
-    @Type(value = AcceptRecord.class, name = ActivityStreamObjectType.Names.ACCEPT),
-    @Type(value = TentativeAccept.class, name = ActivityStreamObjectType.Names.TENTATIVE_ACCEPT),
     @Type(value = Add.class, name = ActivityStreamObjectType.Names.ADD),
-    @Type(value = Invite.class, name = ActivityStreamObjectType.Names.INVITE),
-    @Type(value = Travel.class, name = ActivityStreamObjectType.Names.TRAVEL),
-    @Type(value = CollectionRecord.class, name = ActivityStreamObjectType.Names.COLLECTION),
-    @Type(value = OrderedCollectionRecord.class, name = ActivityStreamObjectType.Names.ORDERED_COLLECTION),
-    @Type(value = CollectionPage.class, name = ActivityStreamObjectType.Names.COLLECTION_PAGE),
-    @Type(value = OrderedCollectionPage.class, name = ActivityStreamObjectType.Names.ORDERED_COLLECTION_PAGE),
     @Type(value = Person.class, name = ActivityStreamObjectType.Names.PERSON),
-    @Type(value = Group.class, name = ActivityStreamObjectType.Names.GROUP),
-    @Type(value = Image.class, name = ActivityStreamObjectType.Names.IMAGE),
-    @Type(value = Note.class, name = ActivityStreamObjectType.Names.NOTE),
-    @Type(value = Place.class, name = ActivityStreamObjectType.Names.PLACE),
-    @Type(value = Event.class, name = ActivityStreamObjectType.Names.EVENT),
     @Type(value = Link.class, name = ActivityStreamObjectType.Names.LINK)
 })
 public sealed interface LinkOrObject permits Link, ActivityStreamObject {

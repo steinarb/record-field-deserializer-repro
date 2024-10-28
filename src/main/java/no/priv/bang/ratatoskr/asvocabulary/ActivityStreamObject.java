@@ -15,7 +15,7 @@
  */
 package no.priv.bang.ratatoskr.asvocabulary;
 
-public sealed interface ActivityStreamObject extends LinkOrObject permits IntransitiveActivity, Actor, ActivityStreamObjectRecord, Collection, Document, Event, Group, Note, Place {
+public sealed interface ActivityStreamObject extends LinkOrObject permits IntransitiveActivity, Actor {
     public String id();
     public String name();
     public String summary();
