@@ -9,7 +9,7 @@
     <name>ratatoskr activitystreams vocabulary</name>
 
     <properties>
-        <jackson-version>2.18.0</jackson-version>
+        <jackson-version>2.18.1</jackson-version>
         <junit.jupiter.version>5.11.0</junit.jupiter.version>
         <mockito.version>5.13.0</mockito.version>
         <assertj.version>3.26.3</assertj.version>
