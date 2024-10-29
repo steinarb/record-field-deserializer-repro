@@ -28,7 +28,7 @@ public record Add(
     LinkOrObject actor,
     LinkOrObject target,
     LinkOrObject origin,
-    @JsonDeserialize(using = LinkDeserializerHandlingStringUrl.class)
+    @JsonDeserialize(converter = StringToLinkConverter.class)
     LinkOrObject object
 ) implements Activity
 {

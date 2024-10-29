@@ -15,13 +15,22 @@
  */
 package no.priv.bang.ratatoskr.asvocabulary;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.util.StdConverter;
 
-public class StringToLinkConverter extends StdConverter<String, Link> {
+public class StringToLinkConverter extends StdConverter<Object, LinkOrObject> {
+    static ObjectMapper mapper = new ObjectMapper();
 
     @Override
-    public Link convert(String value) {
-        return Link.with().href(value).build();
+    public LinkOrObject convert(Object value) {
+        try {
+            return switch (value) {
+                case String strvalue -> Link.with().href(strvalue).build();
+                default -> mapper.readValue(mapper.writeValueAsString(value), LinkOrObject.class);
+            };
+        } catch (Exception e) {
+            throw new IllegalArgumentException("Argument can't be parsed as a String or LinkOrObject", e);
+        }
     }
 
 }
