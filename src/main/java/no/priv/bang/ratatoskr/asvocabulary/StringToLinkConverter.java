@@ -26,7 +26,7 @@ public class StringToLinkConverter extends StdConverter<Object, LinkOrObject> {
         try {
             return switch (value) {
                 case String strvalue -> Link.with().href(strvalue).build();
-                default -> mapper.readValue(mapper.writeValueAsString(value), LinkOrObject.class);
+                default -> mapper.convertValue(value, LinkOrObject.class);
             };
         } catch (Exception e) {
             throw new IllegalArgumentException("Argument can't be parsed as a String or LinkOrObject", e);
