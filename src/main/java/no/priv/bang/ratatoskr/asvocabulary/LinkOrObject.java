@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
     @Type(value = Add.class, name = ActivityStreamObjectType.Names.ADD),
     @Type(value = Link.class, name = ActivityStreamObjectType.Names.LINK)
 })
-public sealed interface LinkOrObject permits Link, Add {
+public interface LinkOrObject {
 
     public ActivityStreamObjectType type();
 
