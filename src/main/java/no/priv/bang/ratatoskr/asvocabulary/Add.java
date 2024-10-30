@@ -15,21 +15,13 @@
  */
 package no.priv.bang.ratatoskr.asvocabulary;
 
-import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 public record Add(
-    @JsonGetter("@context") Object context,
     ActivityStreamObjectType type,
-    String id,
-    String name,
     String summary,
-    Link url,
-    LinkOrObject actor,
-    LinkOrObject target,
-    LinkOrObject origin,
     @JsonDeserialize(using = LinkDeserializerHandlingStringUrl.class)
     LinkOrObject object
-) implements Activity
+) implements LinkOrObject
 {
 }

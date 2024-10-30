@@ -32,10 +32,6 @@ public class ParseTest {
         switch(object) {
             case Add add -> {
                 assertThat(add.summary()).isEqualTo("Sally added an object");
-                switch (add.actor()) {
-                    case Actor actor -> assertThat(actor.name()).isEqualTo("Sally");
-                    default -> fail("Did not get the expected type for add.actor");
-                }
                 switch (add.object()) {
                     case Link link -> assertThat(link.href()).isEqualTo("http://example.org/abc");
                     default -> fail("Did not get the expected type for add.object");

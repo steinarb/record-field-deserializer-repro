@@ -22,10 +22,9 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, include=JsonTypeInfo.As.EXISTING_PROPERTY, property = "type" )
 @JsonSubTypes({
     @Type(value = Add.class, name = ActivityStreamObjectType.Names.ADD),
-    @Type(value = Person.class, name = ActivityStreamObjectType.Names.PERSON),
     @Type(value = Link.class, name = ActivityStreamObjectType.Names.LINK)
 })
-public sealed interface LinkOrObject permits Link, ActivityStreamObject {
+public sealed interface LinkOrObject permits Link, Add {
 
     public ActivityStreamObjectType type();
 
